@@ -1,4 +1,4 @@
-package GraphicsTesting;
+package graphicsTesting;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +15,7 @@ public class PanelTest extends JPanel implements ActionListener, KeyListener{
    final int PANEL_HEIGHT = 400;
    //java.awt
    private Image robot;
+   private Image fireTrap;
    private Timer timer;
    private double xVelocity = 0;
    private double yVelocity = 0;
@@ -40,9 +41,13 @@ public class PanelTest extends JPanel implements ActionListener, KeyListener{
        //Background of this panel
        this.setBackground(Color.GREEN);
        //To create an image->This makes an image out of the image icon
-       this.robot = new ImageIcon("src/robotRock.png").getImage();
+       this.robot = new ImageIcon("src/main/java/images/robotRock.png").getImage();
        Image modRobot = robot.getScaledInstance(90,90, Image.SCALE_SMOOTH);
        this.robot = new ImageIcon(modRobot).getImage();
+
+       Toolkit toolkit = Toolkit.getDefaultToolkit();
+       Image fireTrap = toolkit.getImage("src/main/java/images/fireTrap.gif");
+
 
        this.setOpaque(true);
 
@@ -60,7 +65,10 @@ public class PanelTest extends JPanel implements ActionListener, KeyListener{
        g2D.drawString("Programación orientada a objetos...",10,350);
 
        g2D.drawLine(10,300,50,300);
-       g2D.drawRect(400,20,90,60);
+       g2D.drawRect(400,20,65,60);
+       Toolkit toolkit = Toolkit.getDefaultToolkit();
+       Image fireTrap = toolkit.getImage("src/main/java/images/fireTrap.gif");
+       g2D.drawImage(fireTrap, (int) 390, (int) 285,this);
 
        Ellipse2D circle = new Ellipse2D.Double(xCoordBall, yCoordBall,40,40);
        g2D.fill(circle);
@@ -76,10 +84,13 @@ public class PanelTest extends JPanel implements ActionListener, KeyListener{
        Path2D pathStar = new GeneralPath(GeneralPath.WIND_NON_ZERO);
        g2D.setPaint(Color.RED);
        g2D.fill(createStar(350, 200, 40, 60, 10, 0));
+       g2D.fillRect(400, 320,20,60);
 
        g2D.setPaint(Color.GREEN);
        g2D.drawOval(40,400,80,80);
        g2D.drawImage(robot, (int) x,(int) y,null);
+
+
    }
 
 

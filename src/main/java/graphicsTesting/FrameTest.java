@@ -1,4 +1,4 @@
-package GraphicsTesting;
+package graphicsTesting;
 
 import javax.swing.*;
 import java.awt.*;

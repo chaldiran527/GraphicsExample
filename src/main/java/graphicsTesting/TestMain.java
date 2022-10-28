@@ -1,4 +1,4 @@
-package GraphicsTesting;
+package graphicsTesting;
 
 public class TestMain {
     public static void main(String[] args){
