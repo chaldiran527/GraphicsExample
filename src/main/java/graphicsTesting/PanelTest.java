@@ -24,7 +24,7 @@ public class PanelTest extends JPanel implements ActionListener, KeyListener{
    private double xCoordBall = 500;
    private double yCoordBall = 300;
    private double x = 0;
-   private double y = 0;
+   private double y = 200;
 
    public void moveX(int pX){
        this.x += pX;
@@ -81,10 +81,18 @@ public class PanelTest extends JPanel implements ActionListener, KeyListener{
        int[] yVertices = {200,150,200};//Coordinates of y axis triangle
        g2D.fillPolygon(xVertices,yVertices,3);
 
-       Path2D pathStar = new GeneralPath(GeneralPath.WIND_NON_ZERO);
+//
        g2D.setPaint(Color.RED);
-       g2D.fill(createStar(350, 200, 40, 60, 10, 0));
+//
        g2D.fillRect(400, 320,20,60);
+
+       int xPnts[] = {42, 52, 72, 52, 60, 40, 15, 28, 9, 32, 42};//Polygons that do not close
+       int yPnts[] = {38, 62, 68, 80, 105, 85, 102, 75, 58, 60, 38};
+       g2D.fillPolygon(xPnts, yPnts, xPnts.length);
+
+       int xValues[] = { 350,400,420,440};
+       int yValues[] = { 200,150,230,240};
+       g2D.drawPolyline( xValues, yValues, xValues.length);
 
        g2D.setPaint(Color.GREEN);
        g2D.drawOval(40,400,80,80);
