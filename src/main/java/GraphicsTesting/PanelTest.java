@@ -1,21 +1,20 @@
-package testing.GraphicsTesting;
-import java.awt.*;
-import java.awt.Font;//Fuente
-import java.awt.event.*;
-import java.awt.geom.Ellipse2D;
-import javax.swing.*;//JPanel
-import java.awt.geom.GeneralPath;//Geometry
-import java.awt.geom.Path2D;
+package GraphicsTesting;
 
-import static java.awt.event.KeyEvent.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.GeneralPath;
+import java.awt.geom.Path2D;
 
 public class PanelTest extends JPanel implements ActionListener, KeyListener{
    final int PANEL_WIDTH = 600;
    final int PANEL_HEIGHT = 400;
    //java.awt
    private Image robot;
-   private Image backgroundImage;
-   private Image ball;
    private Timer timer;
    private double xVelocity = 0;
    private double yVelocity = 0;
@@ -34,30 +33,21 @@ public class PanelTest extends JPanel implements ActionListener, KeyListener{
        this.y += pY;
    }
    public PanelTest(){
-       timer = new Timer(0, this);
-       this.timer.start();
        this.addKeyListener(this);
        setFocusable(true);
        setFocusTraversalKeysEnabled(false);
 
-
-       this.x = 0;
-       this.y = 0;
-       this.xVelocity = 0;
-       this.yVelocity = 0;
-
-
-       //Background type image
+       //Background of this panel
        this.setBackground(Color.GREEN);
-       backgroundImage = new ImageIcon("src/Background.jpg").getImage();
        //To create an image->This makes an image out of the image icon
        this.robot = new ImageIcon("src/robotRock.png").getImage();
-       Image modRobot = robot.getScaledInstance(90,90,java.awt.Image.SCALE_SMOOTH);
-       this.ball = new ImageIcon("src/ball.png").getImage();
-       Image modBall = ball.getScaledInstance(90,90, java.awt.Image.SCALE_SMOOTH);
-       this.ball = new ImageIcon(modBall).getImage();
+       Image modRobot = robot.getScaledInstance(90,90, Image.SCALE_SMOOTH);
        this.robot = new ImageIcon(modRobot).getImage();
+
        this.setOpaque(true);
+
+       timer = new Timer(5, this);
+       this.timer.start();
    }
 
 
@@ -198,25 +188,5 @@ public class PanelTest extends JPanel implements ActionListener, KeyListener{
            xVelocity=0;
        if(code == KeyEvent.VK_RIGHT)
            xVelocity=0;
-       //1 up right
-       if(code == KeyEvent.VK_UP && code == KeyEvent.VK_RIGHT) {
-           yVelocity = 0;
-           xVelocity = 0;
-       }
-       // 2 up left
-       if(code == KeyEvent.VK_UP && code == KeyEvent.VK_LEFT) {
-           yVelocity = 0;
-           xVelocity = 0;
-       }
-        //3 down left
-       if(code == KeyEvent.VK_DOWN && code == KeyEvent.VK_LEFT) {
-           yVelocity = 0;
-           xVelocity = 0;
-       }
-        //4 down right
-       if(code == KeyEvent.VK_DOWN && code == KeyEvent.VK_LEFT) {
-           yVelocity = 0;
-           xVelocity = 0;
-       }
     }
 }

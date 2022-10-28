@@ -1,14 +1,10 @@
-package testing.GraphicsTesting;
+package GraphicsTesting;
 //Code base from http://www.java2s.com/Tutorials/Java/Graphics/Image/Draw_gif_image_in_Java.htm
-import java.awt.Graphics;
-import java.awt.Graphics2D;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
-import javax.swing.*;
 
 
 public class GifTestMain extends JComponent implements ActionListener{

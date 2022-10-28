@@ -1,8 +1,7 @@
-package testing.GraphicsTesting;
+package GraphicsTesting;
 
 import javax.swing.*;
 import java.awt.*;
-import model.IConstants;
 
 public class FrameTest extends JFrame {
     PanelTest panel;
