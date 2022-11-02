@@ -1,4 +1,4 @@
-package graphicsTesting;
+package graphicstesting;
 //Code base from http://www.java2s.com/Tutorials/Java/Graphics/Image/Draw_gif_image_in_Java.htm
 
 import javax.swing.*;
@@ -24,7 +24,6 @@ public class GifTestMain extends JComponent implements ActionListener{
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Image fireball = toolkit.getImage("src/main/java/images/fireTrap.gif");
         g2D.drawImage(fireball, x,y,this);
-
         timer.start();
     }
 
