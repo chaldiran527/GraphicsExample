@@ -1,4 +1,4 @@
-package graphicsTesting;
+package graphicstesting;
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,8 +7,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.Path2D;
 
 public class PanelTest extends JPanel implements ActionListener, KeyListener{
    final int PANEL_WIDTH = 600;
@@ -44,10 +42,10 @@ public class PanelTest extends JPanel implements ActionListener, KeyListener{
        this.robot = new ImageIcon("src/main/java/images/robotRock.png").getImage();
        Image modRobot = robot.getScaledInstance(90,90, Image.SCALE_SMOOTH);
        this.robot = new ImageIcon(modRobot).getImage();
-
+/*
        Toolkit toolkit = Toolkit.getDefaultToolkit();
        Image fireTrap = toolkit.getImage("src/main/java/images/fireTrap.gif");
-
+*/
 
        this.setOpaque(true);
 
@@ -58,7 +56,7 @@ public class PanelTest extends JPanel implements ActionListener, KeyListener{
    public void paint(Graphics g){
        super.paintComponent(g);
        Graphics2D g2D = (Graphics2D) g;//Conversion a graphics 2D
-
+/*
        g2D.setFont(new Font("Italic",Font.ITALIC,20));
        g2D.drawString("Programación orientada a objetos...",10,350);
 
@@ -93,13 +91,13 @@ public class PanelTest extends JPanel implements ActionListener, KeyListener{
        g2D.drawPolyline( xValues, yValues, xValues.length);
 
        g2D.setPaint(Color.GREEN);
-       g2D.drawOval(40,400,80,80);
+       g2D.drawOval(40,400,80,80);*/
        g2D.drawImage(robot, (int) x,(int) y,null);
    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+/*
        if(xCoordBall < 0 || xCoordBall > 545){//-55 //original 545
            xVelocityBall =-xVelocityBall;
        }
@@ -108,7 +106,7 @@ public class PanelTest extends JPanel implements ActionListener, KeyListener{
        }
        xCoordBall += xVelocityBall;
        yCoordBall += yVelocityBall;
-
+*/
 
        x += xVelocity;
        y += yVelocity;
